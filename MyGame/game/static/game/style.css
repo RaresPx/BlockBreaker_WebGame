@@ -1,0 +1,355 @@
+/* --- SIMPLE ANIMATIONS (SAFE) --- */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* --- Global Fade-in --- */
+body {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* ========================================================
+   ORIGINAL CSS — ENHANCED BUT NOT STRUCTURALLY CHANGED
+======================================================== */
+
+/* --- Home Container --- */
+.home-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #1e1e2f;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    text-align: center;
+    color: #fff;
+
+    /* subtle entrance */
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.home-container h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffd700;
+    text-shadow: 1px 1px 4px #000;
+}
+
+.home-container p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+/* --- Home Buttons --- */
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-buttons .nav-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.home-buttons .nav-btn:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 214, 51, 0.4);
+}
+
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3f);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+header {
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+header nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+/* --- Main Content --- */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #111;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #aaa;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Page Containers --- */
+.game-container,
+.home-container,
+.leaderboard-container {
+    max-width: 550px;
+    width: 100%;
+    background-color: #1e1e2f;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    text-align: center;
+
+    /* safe entrance */
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* --- Headings --- */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 1px 1px 4px #000;
+}
+
+/* --- Links inside container --- */
+a.button-link {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.2s ease;
+}
+
+a.button-link:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 214, 51, 0.4);
+}
+
+/* --- Status and Score messages --- */
+.status-message {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #00ff99;
+}
+
+.score-display {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #ffcc00;
+}
+
+/* --- Inputs and Buttons --- */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    width: 160px;
+    margin-right: 10px;
+    background: #2b2b3a;
+    color: #fff;
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 8px #ffd700;
+    transform: scale(1.03);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.15s, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 214, 51, 0.4);
+}
+
+/* --- Canvas --- */
+canvas {
+    display: block;
+    margin: 15px auto;
+    background-color: #111;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+    /* subtle fade */
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* --- Leaderboard Table --- */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+.leaderboard-table th {
+    background-color: #222;
+    color: #ffd700;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background-color: #2a2a3f;
+}
+
+.leaderboard-table tr:hover {
+    background-color: #3a3a5f;
+}
+
+/* --- Leaderboard Container --- */
+.leaderboard-wrapper {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #1e1e2f;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+}
+
+/* --- Leaderboard Heading --- */
+.leaderboard-wrapper h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 1px 1px 4px #000;
+}
+
+/* --- Leaderboard List --- */
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #2a2a3f;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.leaderboard-entry:hover {
+    background-color: #3a3a5f;
+    transform: translateX(5px);
+}
+
+.rank {
+    color: #ffd700;
+}
+
+.player {
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.score {
+    font-weight: bold;
+    color: #00ff99;
+}
+
+/* --- No Scores Message --- */
+.no-scores {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* --- Navigation Buttons --- */
+.leaderboard-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 214, 51, 0.4);
+}

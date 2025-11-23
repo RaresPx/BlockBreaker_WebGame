@@ -1,0 +1,14 @@
+{% extends "game/layout.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <h1>🎮 Welcome to Block Breaker!</h1>
+    <p>Challenge yourself and top the leaderboard!</p>
+    <div class="home-buttons">
+        <a class="nav-btn" href="{% url 'game:play' %}">▶ Play Game</a>
+        <a class="nav-btn" href="{% url 'game:leaderboard' %}">🏆 Leaderboard</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "game/layout.html" %}
+{% load static %}
+
+{% block title %}Play{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h2>🎯 Enter your username to play:</h2>
+    
+    <div class="input-wrapper">
+        <input type="text" id="username" placeholder="Username" />
+        <button id="startBtn">Start Game</button>
+    </div>
+
+    <p id="statusMessage" class="status-message"></p>
+
+    <canvas id="gameCanvas" width="480" height="320"></canvas>
+    <p id="score" class="score-display">Score: 0</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'game/game.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const startBtn = document.getElementById('startBtn');
+    const usernameInput = document.getElementById('username');
+
+    startBtn.addEventListener('click', () => {
+        const username = usernameInput.value.trim();
+        if (!username) {
+            alert("Please enter a username to start!");
+            return;
+        }
+
+        window.username = username;
+
+        // Disable input to prevent restarting mid-game
+        usernameInput.disabled = true;
+        startBtn.disabled = true;
+
+        // Show starting message
+        document.getElementById('statusMessage').textContent = "Good luck!";
+
+        // Start the game loop
+        draw();
+    });
+});
+</script>
+{% endblock %}

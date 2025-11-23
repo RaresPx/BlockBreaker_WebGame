@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Game{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'game/style.css' %}">
+    <link rel="icon" href="{% static 'icons/icon.png' %}" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>🎮 Block Breaker Game</h1>
+            <nav>
+                <a href="{% url 'game:home' %}">Home</a>
+                <a href="{% url 'game:play' %}">Play</a>
+                <a href="{% url 'game:leaderboard' %}">Leaderboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-container">
+            {% block content %}
+            <!-- Page-specific content will appear here -->
+            {% endblock %}
+        </div>
+
+        {% block scripts %}
+        <!-- Page-specific scripts -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 We Hate SDL</p>
+    </footer>
+</body>
+</html>
